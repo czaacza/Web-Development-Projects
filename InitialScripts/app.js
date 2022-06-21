@@ -1,14 +1,22 @@
-const shoppingCart = [
-  {
-    product: "jenga",
-    price: 19.99,
-    quantity: 1,
-  },
-  {
-    product: "Klocki",
-    price: 9.99,
-    quantity: 9,
-  },
-];
+let maxNumber = prompt("Enter max number");
+let genNumber = Math.floor(Math.random() * maxNumber) + 1;
+console.log(genNumber);
 
-console.log(shoppingCart[1]["price"]);
+let guessNumber = prompt("Enter first number");
+
+let counter = 0;
+
+while (guessNumber != genNumber) {
+  counter++;
+  if (guessNumber > genNumber) {
+    guessNumber = prompt("Too much. Guess again.");
+  } else if (guessNumber < genNumber) {
+    guessNumber = prompt("Too low. Guess again.");
+  } else {
+    break;
+  }
+}
+
+if (!isNaN(guessNumber)) {
+  console.log("Congrats. It took you " + counter + " guesses to win.");
+}
