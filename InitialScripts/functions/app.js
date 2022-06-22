@@ -1,10 +1,23 @@
-const add = function (x, y) {
-  return x + y;
+let greet = function () {
+  console.log("HI");
 };
 
-// EXCERCISE
-const square = function (num) {
-  return num * num;
+function callTwice(func) {
+  func();
+  func();
+}
+
+const callTenTimes = function (f) {
+  for (let i = 0; i < 10; i++) {
+    f();
+  }
 };
-console.log(square(4)); //16
-console.log(square(3)); //9
+
+function rollDie() {
+  const roll = Math.floor(Math.random() * 6) + 1;
+  console.log(roll);
+}
+
+callTwice(rollDie);
+
+callTenTimes(rollDie);
