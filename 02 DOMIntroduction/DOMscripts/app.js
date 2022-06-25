@@ -1,17 +1,9 @@
-console.log(document.querySelector("p"));
-// gives us only the first match
+const allLinks = document.querySelectorAll("a");
 
-console.log(document.querySelector("#banner"));
-console.log(document.querySelector(".square"));
-
-console.log(document.querySelector("img:nth-of-type(2)"));
-
-// <a> element with title "java"
-console.log(document.querySelector('a[title="Java"]'));
-
-// querySelectorAll gives us collection of ALL matches
-const allLinks = document.querySelectorAll("p a");
-
+// innerText - możemy zmienić wyświetlany tekst
 for (let link of allLinks) {
-  console.log(link.href);
+  link.innerText = "i am a link!";
 }
+
+// innerHTML - możemy dodawać elementy <i> <div> itd
+document.querySelector("h1").innerHTML += "<i> BABLOCZEK</i>";
