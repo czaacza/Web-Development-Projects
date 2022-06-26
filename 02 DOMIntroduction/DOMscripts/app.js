@@ -1,12 +1,11 @@
-const allLinks = document.querySelectorAll("a");
+console.log(document.querySelector("#banner").src);
 
-// innerText - możemy zmienić wyświetlany tekst
-// for (let link of allLinks) {
-//   link.innerText = "i am a link!";
-// }
+const firstLink = document.querySelector("a");
+console.log(firstLink.href);
+console.log(firstLink.getAttribute("href"));
+firstLink.setAttribute("href", "www.google.com");
 
-// innerHTML - możemy dodawać elementy <i> <div> itd
-document.querySelector("h1").innerHTML += "<i> BABLOCZEK</i>";
-
-// exercise
-document.querySelector("#In_cuisine").innerHTML = "In brother";
+const secondInput = document.querySelector('input[type="text"]');
+secondInput.type = "password";
+secondInput.type = "color";
+secondInput.setAttribute("type", "text");
