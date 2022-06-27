@@ -29,3 +29,14 @@ h1.insertAdjacentElement("afterend", h2);
 const h3 = document.createElement("h3");
 h3.innerText = "I am h3";
 h1.after(h3);
+
+// exercise
+const container = document.querySelector("#container");
+const buttonContainer = document.createElement("div");
+container.appendChild(buttonContainer);
+for (let i = 0; i < 100; i++) {
+  newButton = document.createElement("button");
+  newButton.append("Hey!");
+  console.log(newButton.style);
+  buttonContainer.appendChild(newButton);
+}
