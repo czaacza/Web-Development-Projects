@@ -4,7 +4,7 @@
 const h1 = document.querySelector("h1");
 h1.style.color = "red";
 h1.style.fontSize = "75px";
-h1.style.border = "2px solid black";
+// h1.style.border = "2px solid black";
 console.log(h1.style.color);
 
 const allLinks = document.querySelectorAll("a");
@@ -26,3 +26,11 @@ container.style.textAlign = "center";
 const image = document.querySelector("img");
 image.style.width = "150px";
 image.style.borderRadius = "50%";
+
+// exercise 2 - rainbow
+const rainbow = document.querySelectorAll("h1 span");
+const colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
+for (let i = 0; i < rainbow.length; i++) {
+  rainbow[i].style.color = colors[i];
+}
