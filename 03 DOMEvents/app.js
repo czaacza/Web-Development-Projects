@@ -40,3 +40,16 @@ tasButton.onclick = shout;
 // in addEventListener we can run more than one function on one propety
 tasButton.addEventListener("click", twist, { once: true });
 tasButton.addEventListener("click", shout);
+
+// exercise
+
+const helloButton = document.querySelector("#hello");
+const goodbyeButton = document.querySelector("#goodbye");
+
+helloButton.addEventListener("click", () => {
+  console.log("hello");
+});
+
+goodbyeButton.addEventListener("click", () => {
+  console.log("goodbye");
+});
