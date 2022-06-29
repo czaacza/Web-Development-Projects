@@ -53,3 +53,10 @@ helloButton.addEventListener("click", () => {
 goodbyeButton.addEventListener("click", () => {
   console.log("goodbye");
 });
+
+// changing buttons display to block
+const allButtons = document.querySelectorAll("button");
+for (let button of allButtons) {
+  button.style.display = "block";
+  button.style.margin = "10px 0";
+}
