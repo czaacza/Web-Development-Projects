@@ -1,4 +1,4 @@
-function changeColor() {
+function makeRandColor() {
   let firstNum = Math.floor(Math.random() * 255);
   let secondNum = Math.floor(Math.random() * 255);
   let thirdNum = Math.floor(Math.random() * 255);
@@ -8,6 +8,6 @@ function changeColor() {
   document.body.style.backgroundColor = code;
 }
 const btn = document.querySelector("button");
-btn.addEventListener("click", changeColor);
+btn.addEventListener("click", makeRandColor);
 
 const text = document.querySelector("#code");

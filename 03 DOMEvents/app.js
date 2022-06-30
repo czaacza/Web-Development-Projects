@@ -60,3 +60,8 @@ for (let button of allButtons) {
   button.style.display = "block";
   button.style.margin = "10px 0";
 }
+const allLinks = document.querySelectorAll("a");
+for (let link of allLinks) {
+  link.style.display = "block";
+  link.style.margin = "10px 0";
+}
