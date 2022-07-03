@@ -54,6 +54,7 @@ body {
 .playto {
   font-size: 24px;
   margin-top: 12px;
+  font-weight: 600;
   display: inline;
 }
 .select {
@@ -85,4 +86,8 @@ body {
 }
 #reset {
   background-color: #f14668;
+}
+.disabled {
+  background-color: rgba(255, 0, 0, 0.285) !important;
+  cursor: default !important;
 }
