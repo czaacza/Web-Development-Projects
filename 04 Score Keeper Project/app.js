@@ -12,6 +12,9 @@ const select = document.querySelector("#playto");
 p1Button.addEventListener("click", addP1Point);
 p2Button.addEventListener("click", addP2Point);
 resetButton.addEventListener("click", resetPoints);
+select.addEventListener("change", () => {
+  resetPoints();
+});
 
 function addP1Point() {
   p1Points++;
