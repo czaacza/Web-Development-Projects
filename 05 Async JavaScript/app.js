@@ -1,36 +1,22 @@
-// nesting setTimeout inside setTimeout
-
-// setTimeout(() => {
-//   document.body.style.backgroundColor = "red";
-//   setTimeout(() => {
-//     document.body.style.backgroundColor = "orange";
-//     setTimeout(() => {
-//       document.body.style.backgroundColor = "yellow";
-//     }, 1000);
-//   }, 1000);
-// }, 1000);
-
-const delayedColorChange = (color, delay, doNext) => {
+const fakeRequestCallback = (url, success, failure) => {
+  const delay = Math.floor(Math.random() * 4500) + 500;
   setTimeout(() => {
-    document.body.style.backgroundColor = color;
-    doNext && doNext();
+    if (delay > 4000) {
+      failure("Connection Timeout");
+    } else {
+      success(`Here is your fake data from ${url}`);
+    }
   }, delay);
 };
 
-delayedColorChange("red", 1000, () => {
-  delayedColorChange("orange", 1000, () => {
-    delayedColorChange("yellow", 1000, () => {});
-  });
-});
-
-searchMoviesAPI("amadeus", () => {
-  saveToMyDB(
-    movies,
-    () => {
-      // if it works, run this
-    },
-    () => {
-      // if it doesn't work, run this
-    }
-  );
-});
+fakeRequestCallback(
+  "books.com",
+  function (response) {
+    console.log("it worked");
+    console.log(response);
+  },
+  function (response) {
+    console.log("error! ");
+    console.log(response);
+  }
+);
