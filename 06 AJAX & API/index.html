@@ -4,13 +4,76 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AJAX & API</title>
+    <title>TV Shows API</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        color: #333;
+      }
+      .container {
+        background-color: #6d676e;
+        height: 1000px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h1 {
+        color: #fbfffe;
+        font-size: 64px;
+        margin-bottom: 18px;
+      }
+      #searchForm {
+        margin-bottom: 18px;
+      }
+      #images {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 15px;
+        max-width: 1200px;
+      }
+      .input {
+        color: #1b1b1e;
+        border: 2px solid #1b1b1e;
+        background-color: #fbfffe;
+        padding: 12px 16px;
+        font-size: 18px;
+      }
+      ::placeholder {
+        color: #1b1b1e;
+      }
+      .btn {
+        background-color: #fbfffe;
+        font-size: 18px;
+        padding: 12px 16px;
+        border: 2px solid #1b1b1e;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background-color: #faa916;
+      }
+    </style>
   </head>
   <body>
-    <h1>Click to get new jokes! (Dad jokes API)</h1>
-    <button>Click me</button>
-    <ul id="jokes"></ul>
-    <script src="app.js"></script>
+    <div class="container">
+      <h1>TV Show Search</h1>
+      <form action="" id="searchForm">
+        <input
+          type="text"
+          placeholder="TV Show Title"
+          name="query"
+          class="input"
+        />
+        <button class="btn">Search</button>
+      </form>
+
+      <div id="images"></div>
+    </div>
+
+    <script src="tvshows.js"></script>
   </body>
 </html>
