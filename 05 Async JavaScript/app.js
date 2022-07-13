@@ -1,33 +1,48 @@
-const fakeRequestPromise = (url) => {
+const fakeRequest = (url) => {
   return new Promise((resolve, reject) => {
-    const delay = Math.floor(Math.random() * 4500) + 500;
+    const rand = Math.random();
     setTimeout(() => {
-      if (delay > 4000) {
-        reject("Connection Timeout :(");
-      } else {
-        resolve(`Here is your fake data from ${url}`);
+      if (rand < 0.7) {
+        resolve("YOUR FAKE DATA HERE");
       }
+      reject("REQUEST ERROR!");
+    }, 1000);
+  });
+};
+
+fakeRequest("/dogs/1")
+  .then((data) => {
+    console.log("done with request!");
+    console.log("your data: " + data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+// delayed color change using promises
+
+const delayedColorChange = (color, delay) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      document.body.style.backgroundColor = color;
+      resolve();
     }, delay);
   });
 };
 
-// PROMISES MAGIC
-fakeRequestPromise("yelp.com/api/coffee/page1")
-  .then((data) => {
-    console.log("it worked! (page1)");
-    console.log(data);
-    return fakeRequestPromise("yelp.com/api/coffee/page2");
+delayedColorChange("red", 1000)
+  .then(() => {
+    return delayedColorChange("orange", 1000);
   })
-  .then((data) => {
-    console.log("it worked! (page2)");
-    console.log(data);
-
-    return fakeRequestPromise("yelp.com/api/coffee/page3");
+  .then(() => {
+    return delayedColorChange("yellow", 1000);
   })
-  .then((data) => {
-    console.log("it worked! (page3)");
-    console.log(data);
+  .then(() => {
+    return delayedColorChange("violet", 1000);
   })
-  .catch(() => {
-    console.log("oh no! a request failed!!!");
+  .then(() => {
+    return delayedColorChange("green", 1000);
+  })
+  .then(() => {
+    return delayedColorChange("blue", 1000);
   });
