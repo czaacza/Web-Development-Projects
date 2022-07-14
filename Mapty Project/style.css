@@ -1,6 +1,7 @@
 :root {
   --color-brand--1: #ffb545;
   --color-brand--2: #00c46a;
+  --color-brand--3: #e3392a;
 
   --color-dark--1: #2d3439;
   --color-dark--2: #42484d;
@@ -50,7 +51,7 @@ a:visited {
 }
 
 .logo {
-  height: 5.2rem;
+  height: 6.4rem;
   align-self: center;
   margin-bottom: 4rem;
 }
@@ -212,9 +213,12 @@ a:visited {
   background-color: var(--color-dark--1);
 }
 
-.running-popup .leaflet-popup-content-wrapper {
+.easy-popup .leaflet-popup-content-wrapper {
   border-left: 5px solid var(--color-brand--2);
 }
-.cycling-popup .leaflet-popup-content-wrapper {
+.medium-popup .leaflet-popup-content-wrapper {
   border-left: 5px solid var(--color-brand--1);
+}
+.hard-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid var(--color-brand--3);
 }
