@@ -3,6 +3,7 @@
 // prettier-ignore
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
+const logo = document.querySelector('.logo');
 const form = document.querySelector('.form');
 const containerWorkouts = document.querySelector('.workouts');
 const inputName = document.querySelector('.form__input--name');
@@ -30,11 +31,17 @@ class Geopoint {
 class App {
   #map;
   #newMarker;
+  #mapEvent;
+  #geopoints = [];
 
   constructor() {
     this._getPosition();
 
     form.addEventListener('submit', this._newGeopoint.bind(this));
+    logo.addEventListener('click', () => {
+      form.classList.add('hidden');
+      logo.classList.add('logo-centered');
+    });
   }
 
   _getPosition() {
@@ -62,6 +69,7 @@ class App {
 
     // Handling clicks on #map
     this.#map.on('click', mapEvent => {
+      this.#mapEvent = mapEvent;
       this._showForm();
       clearInputs();
       if (this.#newMarker) {
@@ -76,12 +84,64 @@ class App {
 
   _showForm() {
     form.classList.remove('hidden');
+    logo.classList.remove('logo-centered');
     inputName.focus();
   }
 
   _newGeopoint(e) {
     e.preventDefault();
+    const { lat, lng } = this.#mapEvent.latlng;
+    // Get data from the form
+    const name = inputName.value;
+    const difficulty = +inputDifficulty.value;
+    const size = inputSize.value;
+    const terrain = +inputTerrain.value;
+    const date = inputDate.value;
+    const coords = [lat, lng];
 
+    // Check if data is valid
+
+    if (name.length > 20) {
+      alert('Name must be shorter than 20 letters.');
+      return;
+    }
+    if (!difficulty || !terrain) {
+      alert('Please enter all data before adding new Geocache Point');
+      return;
+    }
+    if (size === '') {
+      alert('Please select the size before adding new Geocache Point');
+    }
+    if (date === '') {
+      alert('Please select the date before adding new Geocache Point');
+    }
+
+    // Create geopoint object
+
+    const newGeopoint = new Geopoint(
+      coords,
+      name,
+      difficulty,
+      size,
+      terrain,
+      date
+    );
+    console.log(newGeopoint);
+
+    // Add new object to geopoints array
+    this.#geopoints.push(newGeopoint);
+    console.log(this.#geopoints);
+
+    // Render marker popup
+    this._renderMarkerPopup();
+
+    // Render geopoint on list
+    this._renderGeopoint(newGeopoint);
+
+    // Hide form + input fields
+  }
+
+  _renderMarkerPopup() {
     let popupContent = 'Geocache point';
     if (inputName.value.length > 0) {
       popupContent = inputName.value;
@@ -99,9 +159,35 @@ class App {
       .setPopupContent(popupContent)
       .openPopup();
 
-    console.log(inputDate.value);
     this.#newMarker = undefined;
     form.classList.add('hidden');
+    logo.classList.add('logo-centered');
+  }
+
+  _renderGeopoint(geopoint) {
+    const html = `
+    <h2 class="geopoint__title">${geopoint.name}</h2>
+          <div class="geopoint__details">
+            <span class="geopoint__icon">⭐</span>
+            <span class="geopoint__value">${geopoint.difficulty}</span>
+            <span class="geopoint__unit">/5</span>
+          </div>
+          <div class="geopoint__details">
+            <span class="geopoint__icon">📏</span>
+            <span class="geopoint__value">${geopoint.size}</span>
+            <span class="geopoint__unit"></span>
+          </div>
+          <div class="geopoint__details">
+            <span class="geopoint__icon">⛰️</span>
+            <span class="geopoint__value">${geopoint.terrain}</span>
+            <span class="geopoint__unit">/5</span>
+          </div>
+          <div class="geopoint__details">
+            <span class="geopoint__icon">🗓️</span>
+            <span class="geopoint__value">${geopoint.date}</span>
+            <span class="geopoint__unit"></span>
+          </div>
+    `;
   }
 }
 
