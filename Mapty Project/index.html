@@ -27,49 +27,57 @@
     ></script>
     <script defer src="script.js"></script>
 
-    <title>mapty // Map your workouts</title>
+    <title>mapty // Map your geopoints</title>
   </head>
   <body>
     <div class="sidebar">
-      <img src="geotyLogo.png" alt="Logo" class="logo" />
-
-      <ul class="workouts">
+      <div class="logo-form-row">
+        <img src="geotyLogo.png" alt="Logo" class="logo" />
         <form class="form hidden">
+          <div class="form__row name__row">
+            <label class="form__label form__label--name">Name</label>
+            <input type="text" class="form__input form__input--name" />
+          </div>
           <div class="form__row">
-            <label class="form__label">Type</label>
-            <select class="form__input form__input--type">
-              <option value="running">Running</option>
-              <option value="cycling">Cycling</option>
+            <label class="form__label">Difficulty</label>
+            <select class="form__input form__input--difficulty">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
           </div>
           <div class="form__row">
-            <label class="form__label">Distance</label>
-            <input class="form__input form__input--distance" placeholder="km" />
+            <label class="form__label form__label--right">Size</label>
+            <select class="form__input form__input--size">
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+            </select>
           </div>
           <div class="form__row">
-            <label class="form__label">Duration</label>
-            <input
-              class="form__input form__input--duration"
-              placeholder="min"
-            />
+            <label class="form__label">Terrain</label>
+            <select class="form__input form__input--terrain">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
           </div>
           <div class="form__row">
-            <label class="form__label">Cadence</label>
+            <label class="form__label form__label--right">Date</label>
             <input
-              class="form__input form__input--cadence"
+              type="date"
+              class="form__input form__input--date"
               placeholder="step/min"
-            />
-          </div>
-          <div class="form__row form__row--hidden">
-            <label class="form__label">Elev Gain</label>
-            <input
-              class="form__input form__input--elevation"
-              placeholder="meters"
             />
           </div>
           <button class="form__btn">OK</button>
         </form>
-
+      </div>
+      <ul class="geopoints">
         <!-- <li class="workout workout--running" data-id="1234567890">
           <h2 class="workout__title">Running on April 14</h2>
           <div class="workout__details">
@@ -129,7 +137,6 @@
         as your own.
       </p>
     </div>
-
     <div id="map"></div>
   </body>
 </html>
