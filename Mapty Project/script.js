@@ -30,12 +30,10 @@ class App {
   #newMarker;
   #mapEvent;
   #geopoints = [];
-  #geopointElements = [];
 
   constructor() {
     // Get User's position
     this._getPosition();
-
     // Get data from local storage
     this._getLocalStorage();
 
@@ -81,6 +79,9 @@ class App {
 
       this.#newMarker = L.marker([lat, lng]).addTo(this.#map);
     });
+    for (let geopoint of this.#geopoints) {
+      this._renderGeopointMarker(geopoint);
+    }
   }
 
   _showForm() {
@@ -172,6 +173,26 @@ class App {
     this.#newMarker = undefined;
   }
 
+  _renderGeopointMarker(geopoint) {
+    let popupContent = 'Geocache point';
+    if (geopoint.name.length > 0) {
+      popupContent = geopoint.name;
+    }
+    L.marker(geopoint.coords)
+      .addTo(this.#map)
+      .bindPopup(
+        L.popup({
+          maxWidth: 300,
+          minWidth: 100,
+          autoClose: false,
+          closeOnClick: false,
+          className: `${addClassName(geopoint.difficulty)}-popup`,
+        })
+      )
+      .setPopupContent(popupContent)
+      .openPopup();
+  }
+
   _renderGeopoint(geopoint) {
     const newGeopoint = document.createElement('li');
     newGeopoint.classList.add('geopoint');
@@ -220,7 +241,6 @@ class App {
     `;
     newGeopoint.innerHTML = html;
     ul.prepend(newGeopoint);
-    this.#geopointElements.push(newGeopoint);
   }
 
   _moveToPopup(e) {
@@ -242,20 +262,8 @@ class App {
   _removeGeopoint(e) {
     const closeButtonEl = e.target.closest('.close-button');
     if (closeButtonEl) {
-      const choseGeopointEl = e.target.closest('.geopoint');
-      let choseGeopointObject;
-
-      for (let geopoint of this.#geopoints) {
-        if (geopoint.id === choseGeopointEl.dataset.id) {
-          choseGeopointObject = geopoint;
-        }
-      }
-      console.log(choseGeopointEl);
-      console.log(choseGeopointObject);
-
-      choseGeopointEl.remove();
-
-      localStorage.removeItem();
+      const choseGeopoint = e.target.closest('.geopoint');
+      choseGeopoint.remove();
     }
   }
 
@@ -264,12 +272,13 @@ class App {
   }
 
   _getLocalStorage() {
-    const data = localStorage.getItem('geopoints');
-    this.#geopoints = JSON.parse(data);
-    if (this.#geopoints.length > 0) {
-      for (let geopoint of this.#geopoints) {
-        this._renderGeopoint(geopoint);
-      }
+    const data = JSON.parse(localStorage.getItem('geopoints'));
+    if (!data) {
+      return;
+    }
+    this.#geopoints = data;
+    for (let geopoint of this.#geopoints) {
+      this._renderGeopoint(geopoint);
     }
   }
 }
