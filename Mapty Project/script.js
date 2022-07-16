@@ -1,8 +1,6 @@
 'use strict';
 
-// prettier-ignore
-const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
+const ul = document.querySelector('.geopoints');
 const logo = document.querySelector('.logo');
 const form = document.querySelector('.form');
 const containerWorkouts = document.querySelector('.workouts');
@@ -38,10 +36,7 @@ class App {
     this._getPosition();
 
     form.addEventListener('submit', this._newGeopoint.bind(this));
-    logo.addEventListener('click', () => {
-      form.classList.add('hidden');
-      logo.classList.add('logo-centered');
-    });
+    logo.addEventListener('click', this._hideForm);
   }
 
   _getPosition() {
@@ -85,7 +80,14 @@ class App {
   _showForm() {
     form.classList.remove('hidden');
     logo.classList.remove('logo-centered');
+    ul.classList.remove('geopoints-up');
     inputName.focus();
+  }
+
+  _hideForm() {
+    form.classList.add('hidden');
+    logo.classList.add('logo-centered');
+    ul.classList.add('geopoints-up');
   }
 
   _newGeopoint(e) {
@@ -98,7 +100,6 @@ class App {
     const terrain = +inputTerrain.value;
     const date = inputDate.value;
     const coords = [lat, lng];
-
     // Check if data is valid
 
     if (name.length > 20) {
@@ -126,11 +127,9 @@ class App {
       terrain,
       date
     );
-    console.log(newGeopoint);
 
     // Add new object to geopoints array
     this.#geopoints.push(newGeopoint);
-    console.log(this.#geopoints);
 
     // Render marker popup
     this._renderMarkerPopup();
@@ -139,6 +138,8 @@ class App {
     this._renderGeopoint(newGeopoint);
 
     // Hide form + input fields
+
+    this._hideForm();
   }
 
   _renderMarkerPopup() {
@@ -153,20 +154,21 @@ class App {
           minWidth: 100,
           autoClose: false,
           closeOnClick: false,
-          className: addPopupClassName(inputDifficulty.value),
+          className: `${addClassName(inputDifficulty.value)}-popup`,
         })
       )
       .setPopupContent(popupContent)
       .openPopup();
 
     this.#newMarker = undefined;
-    form.classList.add('hidden');
-    logo.classList.add('logo-centered');
   }
 
   _renderGeopoint(geopoint) {
     const html = `
-    <h2 class="geopoint__title">${geopoint.name}</h2>
+    <li class="geopoint geopoint--${addClassName(
+      geopoint.difficulty
+    )}" data-id="${geopoint.id}">
+          <h2 class="geopoint__title">${geopoint.name}</h2>
           <div class="geopoint__details">
             <span class="geopoint__icon">⭐</span>
             <span class="geopoint__value">${geopoint.difficulty}</span>
@@ -184,25 +186,28 @@ class App {
           </div>
           <div class="geopoint__details">
             <span class="geopoint__icon">🗓️</span>
-            <span class="geopoint__value">${geopoint.date}</span>
+            <span class="geopoint__value">${getDateMonthAndDay(
+              geopoint.date
+            )}</span>
             <span class="geopoint__unit"></span>
           </div>
     `;
+    ul.innerHTML = html + ul.innerHTML;
   }
 }
 
 const app = new App();
 // help functions
-function addPopupClassName(difficulty) {
-  let popupClassName;
+function addClassName(difficulty) {
+  let className;
   if (difficulty <= 2) {
-    popupClassName = 'easy-popup';
+    className = 'easy';
   } else if (difficulty == 3) {
-    popupClassName = 'medium-popup';
+    className = 'medium';
   } else if (difficulty <= 5) {
-    popupClassName = 'hard-popup';
+    className = 'hard';
   }
-  return popupClassName;
+  return className;
 }
 
 function clearInputs() {
@@ -229,4 +234,21 @@ function getTodayDate() {
 
   today = yyyy + '-' + mm + '-' + dd;
   return today;
+}
+
+function getDateMonthAndDay(date) {
+  let dateObject = new Date(date);
+
+  let dd = dateObject.getDate();
+  let mm = dateObject.getMonth() + 1;
+
+  if (dd < 10) {
+    dd = '0' + dd;
+  }
+
+  if (mm < 10) {
+    mm = '0' + mm;
+  }
+
+  return dd + '.' + mm;
 }
