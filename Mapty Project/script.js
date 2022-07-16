@@ -109,8 +109,8 @@ class App {
     const coords = [lat, lng];
     // Check if data is valid
 
-    if (name.length > 20) {
-      alert('Name must be shorter than 20 letters.');
+    if (name.length > 50) {
+      alert('Name must be shorter than 50 letters.');
       return;
     }
     if (!difficulty || !terrain) {
@@ -280,6 +280,11 @@ class App {
     for (let geopoint of this.#geopoints) {
       this._renderGeopoint(geopoint);
     }
+  }
+
+  reset() {
+    localStorage.clear();
+    location.reload();
   }
 }
 
