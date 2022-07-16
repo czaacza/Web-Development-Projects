@@ -3,7 +3,6 @@
 const ul = document.querySelector('.geopoints');
 const logo = document.querySelector('.logo');
 const form = document.querySelector('.form');
-const containerWorkouts = document.querySelector('.workouts');
 const inputName = document.querySelector('.form__input--name');
 const inputDifficulty = document.querySelector('.form__input--difficulty');
 const inputSize = document.querySelector('.form__input--size');
@@ -31,12 +30,19 @@ class App {
   #newMarker;
   #mapEvent;
   #geopoints = [];
+  #geopointElements = [];
 
   constructor() {
+    // Get User's position
     this._getPosition();
+
+    // Get data from local storage
+    this._getLocalStorage();
 
     form.addEventListener('submit', this._newGeopoint.bind(this));
     logo.addEventListener('click', this._hideForm);
+    ul.addEventListener('click', this._moveToPopup.bind(this));
+    ul.addEventListener('click', this._removeGeopoint.bind(this));
   }
 
   _getPosition() {
@@ -140,6 +146,9 @@ class App {
     // Hide form + input fields
 
     this._hideForm();
+
+    // Set local storage to all geopoints
+    this._setLocalStorage();
   }
 
   _renderMarkerPopup() {
@@ -164,11 +173,28 @@ class App {
   }
 
   _renderGeopoint(geopoint) {
+    const newGeopoint = document.createElement('li');
+    newGeopoint.classList.add('geopoint');
+    // prettier-ignore
+    newGeopoint.classList.add(`geopoint--${addClassName(geopoint.difficulty)}`);
+    newGeopoint.dataset.id = geopoint.id;
     const html = `
-    <li class="geopoint geopoint--${addClassName(
-      geopoint.difficulty
-    )}" data-id="${geopoint.id}">
           <h2 class="geopoint__title">${geopoint.name}</h2>
+           <button class="close-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-x"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
           <div class="geopoint__details">
             <span class="geopoint__icon">⭐</span>
             <span class="geopoint__value">${geopoint.difficulty}</span>
@@ -192,11 +218,64 @@ class App {
             <span class="geopoint__unit"></span>
           </div>
     `;
-    ul.innerHTML = html + ul.innerHTML;
+    newGeopoint.innerHTML = html;
+    ul.prepend(newGeopoint);
+    this.#geopointElements.push(newGeopoint);
+  }
+
+  _moveToPopup(e) {
+    const geopointEl = e.target.closest('.geopoint');
+    if (geopointEl) {
+      const id = geopointEl.dataset.id;
+      for (let geopoint of this.#geopoints) {
+        if (geopoint.id === id) {
+          this.#map.setView(geopoint.coords, 13, {
+            animate: true,
+            pan: { duration: 1 },
+          });
+          return;
+        }
+      }
+    }
+  }
+
+  _removeGeopoint(e) {
+    const closeButtonEl = e.target.closest('.close-button');
+    if (closeButtonEl) {
+      const choseGeopointEl = e.target.closest('.geopoint');
+      let choseGeopointObject;
+
+      for (let geopoint of this.#geopoints) {
+        if (geopoint.id === choseGeopointEl.dataset.id) {
+          choseGeopointObject = geopoint;
+        }
+      }
+      console.log(choseGeopointEl);
+      console.log(choseGeopointObject);
+
+      choseGeopointEl.remove();
+
+      localStorage.removeItem();
+    }
+  }
+
+  _setLocalStorage() {
+    localStorage.setItem('geopoints', JSON.stringify(this.#geopoints));
+  }
+
+  _getLocalStorage() {
+    const data = localStorage.getItem('geopoints');
+    this.#geopoints = JSON.parse(data);
+    if (this.#geopoints.length > 0) {
+      for (let geopoint of this.#geopoints) {
+        this._renderGeopoint(geopoint);
+      }
+    }
   }
 }
 
 const app = new App();
+
 // help functions
 function addClassName(difficulty) {
   let className;
