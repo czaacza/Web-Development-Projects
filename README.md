@@ -8,4 +8,5 @@
 ### TV Shows Api searcher (WebAPI, axios, DOM)
 <img src="https://github.com/czaacza/WebDeveloperCourse/blob/master/img/tvShowsAPI.PNG" width="547" height="400"/>
 
+### geoty project - app using localStorage API, Leaflet geolocation API 
 <img src="https://github.com/czaacza/WebDeveloperCourse/blob/master/img/geotyProject.PNG" width="844" height="400"/>
