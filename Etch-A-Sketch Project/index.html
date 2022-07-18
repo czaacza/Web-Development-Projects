@@ -12,11 +12,9 @@
     />
   </head>
   <body>
-    <div class="center-container">
-      <div class="input-holder-container">
-        <label for="input-holder" class="input-holder-label"
-          >Put a number</label
-        >
+    <div class="input-holder-container">
+      <label for="input-holder" class="input-holder-label">Put a number</label>
+      <div class="inputs">
         <input
           type="text"
           class="input-holder input-holder-row"
@@ -31,8 +29,21 @@
           value="16"
         />
       </div>
-      <div class="container"></div>
+      <div class="color-picker-container">
+        <div class="color-input-container">
+          <label for="color-input">Choose your color!</label>
+          <input
+            type="color"
+            name="color-input"
+            class="color-input"
+            value="#000"
+          />
+        </div>
+        <button class="color-button btn-grad">Make it colorful!</button>
+      </div>
     </div>
+
+    <div class="container"></div>
     <script src="app.js"></script>
   </body>
 </html>
