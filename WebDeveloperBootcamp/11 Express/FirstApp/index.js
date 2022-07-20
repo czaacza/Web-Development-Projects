@@ -8,6 +8,18 @@ const app = express();
 //   res.send("<h1>This is my response!</h1>");
 // });
 
+app.get("/r/:subreddit", (req, res) => {
+  const { subreddit } = req.params;
+  res.send(`Browsing the ${subreddit} subreddit`);
+});
+
+app.get("/r/:subreddit/:postId", (req, res) => {
+  const { subreddit, postId } = req.params;
+  res.send(`Viewing Post ID: ${postId} on the ${subreddit} subreddit`);
+});
+
+// //////////////
+
 app.get("/cats", (req, res) => {
   res.send("MEOW!!!");
 });
