@@ -48,7 +48,7 @@ app.get("/dogs", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("THIS IS MY HOME PAGE!!!");
+  res.send("THIS IS THE HOME PAGE!!!");
 });
 
 // MUST BE THE LAST OF ALL app.get()
