@@ -10,11 +10,19 @@ app.get("/", (req, res) => {
   res.render("home.ejs");
 });
 
+// LOOPS IN TEMPLATE
+app.get("/cats", (req, res) => {
+  const cats = ["Redi", "Bati", "Rysio", "Cookie", "Winston"];
+  res.render("cats", { cats });
+});
+
+// PARSING DATA TO TEMPLATES
 app.get("/r/:subreddit", (req, res) => {
   const { subreddit } = req.params;
   res.render("subreddit", { subreddit });
 });
 
+// IF STATEMENTS, PARSING DATA
 app.get("/random", (req, res) => {
   const num = Math.floor(Math.random() * 10) + 1;
   res.render("random", { num });
