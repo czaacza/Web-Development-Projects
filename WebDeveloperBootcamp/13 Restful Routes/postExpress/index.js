@@ -43,7 +43,7 @@ app.post("/comments", (req, res) => {
     username,
     comment,
   });
-  res.send("it worked");
+  res.redirect("/comments");
 });
 
 ///////////////////////
