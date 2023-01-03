@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap grid system</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="display-1 text-center text-primary">The Grid System</h1>
+      <div class="row">
+        <div class="col-2 bg-danger">I am 2 units</div>
+        <div class="col-8 bg-info">I am 8 units</div>
+        <div class="col-2 bg-danger">I am 2 units</div>
+      </div>
+      <div class="row">
+        <div class="col bg-danger">I am auto sized</div>
+        <div class="col bg-info">I am 4 auto sized</div>
+        <div class="col bg-danger">I am 4 auto sized</div>
+      </div>
+      <a href="./gridExercise.html">Grid exercise</a>
+      <h2 class="display-4">Responsive Grid</h2>
+      <div class="row">
+        <div class="col-md-6 col-xl-3 bg-info">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+          eum maiores autem nobis ipsum veritatis quae itaque, repellendus optio
+          voluptates expedita soluta sapiente molestiae. Tempore, praesentium
+          reprehenderit. Explicabo, exercitationem molestiae!
+        </div>
+        <div class="col-md-6 col-xl-3 bg-danger">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam
+          minus natus dolorum asperiores in, at voluptatibus eum neque soluta
+          quae vero eligendi provident eveniet, animi nostrum repellat! A,
+          incidunt fugiat!
+        </div>
+        <div class="col-md-6 col-xl-3 bg-info">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+          eum maiores autem nobis ipsum veritatis quae itaque, repellendus optio
+          voluptates expedita soluta sapiente molestiae. Tempore, praesentium
+          reprehenderit. Explicabo, exercitationem molestiae!
+        </div>
+        <div class="col-md-6 col-xl-3 bg-danger">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam
+          minus natus dolorum asperiores in, at voluptatibus eum neque soluta
+          quae vero eligendi provident eveniet, animi nostrum repellat! A,
+          incidunt fugiat!
+        </div>
+      </div>
+      <h2 class="display-4">Grid alignment</h2>
+      <div class="row align-items-center">
+        <div class="col bg-danger">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+          rem aliquid quis omnis pariatur consequuntur cupiditate deleniti
+        </div>
+        <div class="col bg-warning">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+          rem aliquid quis omnis pariatur consequuntur cupiditate deleniti
+        </div>
+        <div class="col bg-success">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+          rem aliquid quis omnis pariatur consequuntur cupiditate deleniti Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Fugiat sapiente id
+          modi facere cumque? Ut veniam voluptatibus animi magni cumque ratione,
+          aliquam nam, magnam explicabo necessitatibus fugit nihil tempora
+          error.
+        </div>
+        <div class="col bg-info align-self-end">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+          rem aliquid quis omnis pariatur consequuntur cupiditate deleniti
+        </div>
+      </div>
+      <h2 class="display-4">Justify Content</h2>
+      <div
+        class="row border justify-content-center justify-content-lg-start justify-content-xl-between"
+      >
+        <div class="col-4 bg-primary">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+          aspernatur totam nisi ex iste odio nostrum nobis tempore assumenda
+          facilis aut, laboriosam cumque excepturi nesciunt voluptatibus, ab
+          nemo asperiores similique?
+        </div>
+        <div class="col-4 bg-info">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+          aspernatur totam nisi ex iste odio nostrum nobis tempore assumenda
+          facilis aut, laboriosam cumque excepturi nesciunt voluptatibus, ab
+          nemo asperiores similique?
+        </div>
+      </div>
+      <h2 class="display-4">Images</h2>
+      <div class="row no-gutters">
+        <div class="col-xl-4 col-md-6">
+          <img
+            class="img-fluid"
+            src="https://images.unsplash.com/photo-1444464666168-49d633b86797?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+            alt=""
+          />
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <img
+            class="img-fluid"
+            src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80"
+            alt=""
+          />
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <img
+            class="img-fluid"
+            src="https://images.unsplash.com/photo-1555169062-013468b47731?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
