@@ -2,7 +2,10 @@
 ## Projects
 
 ### Zoland Chargers - Custom built ecommerce store for Zoland Chargers Company (wordpress woocommerce)
+[zoland-chargers.pl](https://zoland-chargers.pl/)
+
 <img src="https://github.com/czaacza/Web-Development-Projects/blob/master/img/zoland.png" width="800" height=""/>
+
 
 ### newsty project - app using [newsAPI](https://newsapi.org/) (MVC, AJAX, modules, NPM)
 [newsty.netlify.app](https://newsty.netlify.app/)
