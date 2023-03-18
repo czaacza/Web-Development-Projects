@@ -1,7 +1,7 @@
 # My Web Development Projects
 ## Projects
 
-### CIS - Local carpenter company website design and creation
+### CIS - Local carpentry company website design and creation
 [meblecis.pl](https://mateuszczarnecki.pl)
 
 <img src="https://github.com/czaacza/Web-Development-Projects/blob/master/img/cis.png" width="800" height=""/>
