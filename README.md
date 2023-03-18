@@ -1,6 +1,11 @@
 # My Web Development Projects
 ## Projects
 
+### CIS - Local carpenter company website design and creation
+[meblecis.pl](https://mateuszczarnecki.pl)
+
+<img src="https://github.com/czaacza/Web-Development-Projects/blob/master/img/cis.png" width="800" height=""/>
+
 ### Zoland Chargers - Custom built ecommerce store for Zoland Chargers Company (wordpress woocommerce)
 [zoland-chargers.pl](https://zoland-chargers.pl/)
 
