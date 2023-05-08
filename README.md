@@ -1,6 +1,13 @@
 # My Web Development Projects
 ## Projects
 
+### eBookery - fullstack ecommerce book shop app created with node.js, mongodb and vite framework
+[ebookery.com](https://ebookery-frontend-production.up.railway.app/)
+[github repo](https://github.com/czaacza/Server-Side-Project)
+
+
+<img src="https://github.com/czaacza/Server-Side-Project/blob/master/img/home.png" width="800" height=""/>
+
 ### CIS - Local carpentry company website design and creation
 [meblecis.pl](https://mateuszczarnecki.pl)
 
