@@ -4,7 +4,7 @@
 ### eBookery - fullstack ecommerce book shop app created with node.js, mongodb and vite framework
 [ebookery.com](https://ebookery-frontend-production.up.railway.app/)
 
-[github repo](https://github.com/czaacza/Server-Side-Project)
+[github repo](https://github.com/czaacza/Server-Side-Project).
 
 
 <img src="https://github.com/czaacza/Server-Side-Project/blob/master/img/home.png" width="800" height=""/>
