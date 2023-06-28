@@ -4,6 +4,9 @@
 ### Energyspot - heat pump products business website
 [petspot.pl](http://petspot.pl)
 
+<img src="https://github.com/czaacza/Web-Development-Projects/blob/master/img/petspot.png" width="800" height=""/>
+
+
 ### eBookery - fullstack ecommerce book shop app created with node.js, mongodb and vite framework
 [ebookery.com](https://ebookery-frontend-production.up.railway.app/)
 
