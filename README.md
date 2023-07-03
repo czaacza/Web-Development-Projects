@@ -6,6 +6,10 @@
 
 <img src="https://github.com/czaacza/Web-Development-Projects/blob/master/img/petspot.png" width="800" height=""/>
 
+### Solar Estimator - Software that helps evaluate savings from solar-panels
+[solar-estimator](https://github.com/czaacza/solar-estimator)
+
+<img src="https://github.com/czaacza/Web-Development-Projects/blob/master/img/solar-estimator-main.png" width="800" height=""/>
 
 ### eBookery - fullstack ecommerce book shop app created with node.js, mongodb and vite framework
 [ebookery.com](https://ebookery-frontend-production.up.railway.app/)
