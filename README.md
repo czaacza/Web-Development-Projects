@@ -2,7 +2,7 @@
 ## Projects
 
 ### Energyspot - heat pump products business website
-[petspot.pl](http://petspot.pl).
+[petspot.pl](http://petspot.pl)
 
 <img src="https://github.com/czaacza/Web-Development-Projects/blob/master/img/petspot-3.png" width="800" height=""/>
 
