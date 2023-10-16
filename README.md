@@ -1,7 +1,7 @@
 # My Web Development Projects
 ## Projects
 
-### Energyspot - heat pump products business website
+### Energyspot - heat pump products business website (commercial)
 [petspot.pl](http://petspot.pl)
 
 <img src="https://github.com/czaacza/Web-Development-Projects/blob/master/img/petspot-3.png" width="800" height=""/>
@@ -19,12 +19,12 @@
 
 <img src="https://github.com/czaacza/Server-Side-Project/blob/master/img/home.png" width="800" height=""/>
 
-### CIS - Local carpentry company website design and creation
+### CIS - Local carpentry company website design and creation (commercial)
 [meblecis.pl](http://meblecis.pl)
 
 <img src="https://github.com/czaacza/Web-Development-Projects/blob/master/img/cis.png" width="800" height=""/>
 
-### Zoland Chargers - Custom built ecommerce store for Zoland Chargers Company (wordpress woocommerce)
+### Zoland Chargers - Custom built ecommerce store for Zoland Chargers Company (wordpress woocommerce) (commercial)
 [zoland-chargers.pl](https://zoland-chargers.pl/)
 
 <img src="https://github.com/czaacza/Web-Development-Projects/blob/master/img/zoland.png" width="800" height=""/>
