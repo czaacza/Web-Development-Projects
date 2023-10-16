@@ -52,6 +52,11 @@
 
 <img src="https://github.com/czaacza/Web-Development-Projects/blob/master/img/omnifood.PNG" width="812" height="400"/>
 
+### Countries app (WebAPI, DOM)
+[github repo](https://github.com/czaacza/countries-app)
+
+<img src="https://github.com/czaacza/countries-app/blob/master/img/countries-app-img.png" height="400" />
+
 ### Calculator project (DOM, memory logic, events)
 
 [calculator-czaacza.netlify.app](https://calculator-czaacza.netlify.app/)
