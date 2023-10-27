@@ -6,7 +6,7 @@
 
 <img src="https://github.com/czaacza/Web-Development-Projects/blob/master/img/petspot-3.png" width="800" height=""/>
 
-### Solar Estimator - Software evaluating solar-panels savings
+### Solar Estimator - software for assessing solar panel efficiency and cost savings
 [solar-estimator](https://github.com/czaacza/solar-estimator)
 
 <img src="https://github.com/czaacza/Web-Development-Projects/blob/master/img/solar-estimator-main.png" width="800" height=""/>
