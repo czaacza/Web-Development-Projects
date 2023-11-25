@@ -57,6 +57,7 @@
 
 <img src="https://github.com/czaacza/countries-app/blob/master/img/countries-app-img.png" height="400" />
 
+<!--
 ### Calculator project (DOM, memory logic, events)
 
 [calculator-czaacza.netlify.app](https://calculator-czaacza.netlify.app/)
@@ -64,6 +65,7 @@
 [github repo](https://github.com/czaacza/Calculator-Project)
 
 <img src="https://github.com/czaacza/Calculator-Project/blob/master/img/screen-full-app.PNG" width="" height="500"/>
+ -->
 
 ### TV Shows Api searcher (WebAPI, axios, DOM)
 [tv-searcher-czaacza.netlify.app](https://tv-searcher-czaacza.netlify.app/)
