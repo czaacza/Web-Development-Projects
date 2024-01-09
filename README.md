@@ -1,6 +1,14 @@
 # My Web Development Projects
 ## Projects
 
+### Budget Tracker (react native, firebase, jwt, mongodb)
+<div float="left">
+ <img src="https://github.com/czaacza/budget-tracker/blob/master/img/Zrzut%20ekranu%202024-01-6%20o%2016.29.13.png" width="200" height=""/>
+ <img src="https://github.com/czaacza/budget-tracker/blob/master/img/Zrzut%20ekranu%202024-01-6%20o%2016.30.00.png" width="200" height=""/>
+ <img src="https://github.com/czaacza/budget-tracker/blob/master/img/Zrzut%20ekranu%202024-01-6%20o%2016.32.20.png" width="200" height=""/>
+ <img src="https://github.com/czaacza/budget-tracker/blob/master/img/Zrzut%20ekranu%202024-01-6%20o%2016.30.32.png" width="200" height=""/>
+</div>
+
 ### Soulmate spedition - Transport company website (commercial)
 <img src="https://github.com/czaacza/Web-Development-Projects/blob/master/img/soulmate-spedition.png" width="800" height=""/>
 
