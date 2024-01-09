@@ -63,6 +63,15 @@
 
 <img src="https://github.com/czaacza/Web-Development-Projects/blob/master/img/omnifood.PNG" width="812" height="400"/>
 
+### Android Souvenir App (kotlin, androidSDK)
+[github repo](https://github.com/czaacza/Android-Souvenir-App)
+
+<div float="left">
+ <img src="https://github.com/czaacza/Android-Souvenir-App/blob/master/img/Screenshot_20230128-232104_Souvenir%20App.jpg" width="200" height=""/>
+ <img src="https://github.com/czaacza/Android-Souvenir-App/blob/master/img/Screenshot_20230128-232053_Souvenir%20App.jpg" width="200" height=""/>
+ <img src="https://github.com/czaacza/Android-Souvenir-App/blob/master/img/Screenshot_20230128-232109_Souvenir%20App.jpg" width="200" height=""/>
+</div>
+
 ### Countries app (WebAPI, DOM)
 [github repo](https://github.com/czaacza/countries-app)
 
