@@ -1,5 +1,4 @@
-# My Web Development Projects
-## Projects
+# My Software Projects
 
 ### Budget Tracker (react native, firebase, jwt, mongodb)
 [github repo](https://github.com/czaacza/budget-tracker)
