@@ -32,7 +32,8 @@
 <img src="https://github.com/czaacza/Web-Development-Projects/blob/master/img/cis.png" width="800" height=""/>
 
 ### Soulmate spedition - Transport company website (commercial)
-[soulmate-spedition.pl](soulmate-spedition.pl)
+
+[soulmate-spedition.pl](https://soulmate-spedition.pl)
 
 <img src="https://github.com/czaacza/Web-Development-Projects/blob/master/img/soulmate-spedition.png" width="800" height=""/>
 
