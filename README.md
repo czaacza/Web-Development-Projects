@@ -47,7 +47,7 @@
 
 [github repo](https://github.com/czaacza/Newsty-Project)
 
-[<img src="https://github.com/czaacza/Newsty-Project/blob/master/helpFiles/videoImg2.PNG" width="754" height="600"/>](https://www.youtube.com/watch?v=ibjDHH2049g "Newsty Project presentation")
+[<img src="https://github.com/czaacza/Newsty-Project/blob/master/helpFiles/videoImg2.PNG" width="754" />](https://www.youtube.com/watch?v=ibjDHH2049g "Newsty Project presentation")
 
 
 ### geoty project - app using localStorage API, Leaflet geolocation API 
